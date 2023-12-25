@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <!-- main css  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- boxicon cdn  -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        html{
+    scroll-behavior: smooth;
+}
+/* header  */
+.logo{
+    opacity: 0;
+    animation: slideright 1s ease forwards;
+    animation-delay: .7s;
+}
+@keyframes slideright  {
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+.navbar a{
+    transition: 0.3s;
+    opacity: 0;
+    animation: slidetop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+@keyframes  slidetop {
+    0%{
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+/* home section  */
+
+h3{
+    opacity: 0;
+    animation: slidebottom 1s ease forwards;
+    animation-delay: .7s;
+}
+@keyframes slidebottom{
+    0%{
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+h3:nth-of-type(2){
+    margin-bottom: 30px;
+}
+
+h1{
+    opacity: 0;
+    animation: slideright 1s ease forwards;
+    animation-delay: .2s;
+}
+p{
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: .1s;
+}
+@keyframes slideleft{
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+
+.home-sci a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i)); 
+}
+.home-sci a:hover{
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef; 
+}
+.btn-box{
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #001b26;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef; 
+}
+.btn-box:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan
+}
+.main-img{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px rgb(91, 128, 197), 0 0 50px rgb(223, 125, 185),
+    0 0 100px rgb(114, 56, 114), 0 0 200px cyan;
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: .1s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef, 0 0 50px #0ef; 
+}
+.about{
+    align-items: center;
+    justify-content: center;
+}
+.about-img{
+    opacity: 0;
+    animation: slideright 1s ease forwards;
+    animation-delay: .1s;
+}
+.about-text h2,h4{   
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: .1s;
+
+}
+/* services section  */
+
+.sub-title{
+    text-align: center;
+    font-size: 55px;
+    padding-bottom: 70px;
+}
+
+.services-list div{
+    background-color: transparent;
+    padding: 40px;
+    font-size:  13px;
+    font-weight: 15px;
+    border-right: 10px;
+    border-radius: 20px;
+    transition: background 0.5s, transfrom 0.5s;
+    box-shadow: 1px 1px 20px #116570;
+}
+.services-list div i{
+    font-size: 35px;
+    margin-bottom: 25px;
+    color: #0ef;
+}
+
+.services-list div a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.read{
+    display: inline-block;
+    padding: 12px 20px;
+    background: #0ef;
+    border-radius: 20px;
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: 1s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+.read:hover{
+    box-shadow: 0 0 5px cyan,
+    0 0 25px cyan, 0 0 50px cyan,
+    0 0 100px cyan, 0 0 200px cyan
+}
+/* portfolio section  */
+.row{
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    cursor: pointer;
+}
+.row img{
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.5s; 
+}
+.layer{
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.1),#0ef);
+    position: absolute;
+    border-radius: 8px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+.layer h5{
+    color: black;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+.layer p{
+    color: black;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+.layer i{
+    color: black;
+    margin-top: 20px;
+    font-size: 20px;
+    background-color: #fff;
+    width: 60px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+.row:hover img{
+    transform: scale(1.1);
+}
+.row:hover .layer{
+    height: 100%;
+}
+.contact-text h2{
+    font-size: 50px;
+    line-height: 1;
+    text-align: center;
+}
+.contact-text h2 span{
+    color: #0ef;
+}
+.contact-text h4{
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.contact-text p{
+    font-size: 15px;
+    line-height: 1;
+    margin-bottom: 10px;
+}
+.contact-list{
+    margin-bottom: 2rem;
+}
+.contact-list li{
+    margin-bottom: 10px ;
+    display: block;
+}
+.contact-list li i{
+    margin-right: 10px;
+    font-size: 20px;
+}
+.contact-icon i{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    color: #0ef;
+    font-size: 20px;
+    margin: 30px 15px 30px 0;
+}
+.contact-icon i:hover{
+    color: black;
+    background-color: #0ef;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+.contact-form form input,form textarea{
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 10px;
+    background-color: #556061;
+    color: black;
+    font-size: 1rem;
+    font-weight: 60px;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+.contact-form textarea{
+    resize: none;
+    height: 220px;
+}
+.contact-form form .send{
+    width: 90%; 
+    margin-top: 15px;
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 50px;
+    font-size: 18px;
+    color: #001b26;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef;
+}
+.contact-form form .send:hover{
+    color: black;
+    background-color: #0ef;
+    box-shadow: 0 0 5px #0ef, 0 0 25px #0ef, 0 0 50px #0ef, 0 0 100px #0ef;
+}
+
+#hamburger .bx-x{
+    display: none;
+}
+.portfolio h2{
+    opacity: 0;
+    animation: slidetop 1s ease forwards;
+    animation-delay: .2s;
+}
+.contact h2{
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: .3s;
+}
+.contact-list{
+    opacity: 0;
+    animation: slideright 1s ease forwards;
+    animation-delay: .3s;
+}
+.experience h2{
+    opacity: 0;
+    animation: slidebottom 1s ease forwards;
+    animation-delay:  .3s;
+}
+    </style>
+</head>
+<body class="bg-stone-900 text-white">
+    <!-- nav section  -->
+
+    <header class="sticky top-0 left-0 z-50">
+        <div class="container mx-auto">
+            <div class="flex justify-between items-center py-4 px-2">
+                <div>
+                    <a href="#" class="logo text-3xl lg:text-4xl capitalize font-bold">Code_<span class="text-blue-500">X</span></a>
+                    <br>
+                    <a href="#"  class="logo text-xs capitalize font-semibold text-stone-400">Design Your Dreams</a>
+                </div>
+                <div>
+                    <nav class="navbar hidden lg:flex text-lg font-semibold ">
+                        <a class="ml-6 hover:text-blue-400 duration-200" href="#home"  style="--i:1" >Home</a>
+                        <a class="ml-6 hover:text-blue-400 duration-200" href="#about" style="--i:2">About</a>
+                        <a class="ml-6 hover:text-blue-400 duration-200" href="#services" style="--i:3">Skill</a>
+                        <a class="ml-6 hover:text-blue-400 duration-200" href="#portfolio" style="--i:4">Portfolio</a>
+                        <a class="ml-6 hover:text-blue-400 duration-200" href="#contact" style="--i:5">Contact</a>
+                    </nav>
+                  
+                </div>
+           
+                <!-- mobile screen  -->           
+                <div id="hamburger" class="lg:hidden cursor-pointer z-50">
+                    <i class='bx bx-menu text-2xl mobile-icon'></i>                      
+                </div>           
+
+                <div id="menu" class="hidden bg-black absolute inset-0 h-[60vh]">
+                    <ul class=" h-full grid place-items-center py-10">
+                        <a class="nav-link ml-6 hover:text-blue-400 text-lg duration-200" href="#home" style="--i:1" >Home</a>
+                        <a class="nav-link ml-6 hover:text-blue-400 text-lg duration-200" href="#about" style="--i:2">About</a>
+                        <a class="nav-link ml-6 hover:text-blue-400 text-lg duration-200" href="#services" style="--i:3">Skill</a>
+                        <a class="nav-link ml-6 hover:text-blue-400 text-lg duration-200" href="#portfolio" style="--i:4">Portfolio</a>
+                        <a class="nav-link ml-6 hover:text-blue-400 text-lg duration-200" href="#contact" style="--i:5">Contact</a>
+                    </ul>
+                </div> 
+               
+            </div>
+          
+         
+        </div>        
+    </header>
+    <!-- home section  -->
+    <section id="home" class="home py-20">
+        <div class="container grid lg:grid-cols-2 grid-cols-1 justify-between items-center mx-auto px-4 lg:px-0 gap-10">
+            <div class="">
+                <h3 class="md:text-3xl text-xl font-bold mb-2">Hello, It's Me</h3>
+                <h1 class="md:text-5xl text-4xl font-semibold mb-2">Somnath Paul</h1>
+                <h3 class="md:text-3xl text-xl font-bold mb-4">And I'm a <span class="text text-blue-400"></span></h3>
+                <p class="md:text-lg text-sm md:mb-4 mb-0">I'm a UI/UX Designer with extensive experience for over 1 years. <br>expertise is to create and UI/UX design, My research experience has refined my problem-solving skills and user insights. I’m constantly seeking new ways to learn and grow through real-world experiences.</p>
+                <div class="home-sci">
+                    <a class="" href="https://www.facebook.com/somnath.paul.12720" style="--i:7"><i class='bx bxl-facebook'></i></a>
+                    <a class="" href="https://www.instagram.com/code_withsomnah/" style="--i:8"><i class='bx bxl-instagram' ></i></a>
+                    <a class="" href="https://www.linkedin.com/in/somnath-paul-22b489259/" style="--i:9"><i class='bx bxl-linkedin' ></i></a>
+                    <a class="" href="https://twitter.com/Somnath51164832" style="--i:10"><i class='bx bxl-twitter' ></i></a>
+                </div>
+                <a href="#contact" class="btn-box">Contact me</a> 
+            </div>
+            <div class="w-3/4 ml-16 lg:ml-20"><img src="main-2.jpeg" alt="" class="main-img rounded-3xl"></div>
+        </div>
+    </section>
+    <!-- about section  -->
+    <section id="about" class="about py-20 px-4 lg:px-0">
+
+        <div class="container mx-auto">
+            <h1 class="lg:text-5xl text-3xl text-center pb-16">About<span class="text-blue-500">me</span></h1>
+            <div class="about grid lg:grid-cols-2 justify-items-center gap-10 mx-auto">
+              <div class="about-img w-96 h-96">
+                <img src="main.jpeg" alt="" class="about-img w-full h-full rounded-full border-x-8 border-x-sky-400 border-y-8 border-y-red-400">
+              </div>
+              <div class="about-text ">
+                <h2 class="md:text-4xl text-2xl text-yellow-300 mb-3">Hi i am a</h2>
+                <h4 class="md:text-3xl text-xl font-semibold leading-relaxed mb-3">UI/UX Designer!</h4>
+                <p class=" md:text-xl text-sm mb-4">I'm a UI/UX Designer with extensive experience for over 1 years. <br>expertise is to create and UI/UX design, website design, mobile app design, My research experience has refined my problem-solving skills and user insights. I’m constantly seeking new ways to learn and grow through real-world experiences.</p>
+                <p class="md:text-xl text-sm mb-8">My skills include user experience design, interaction design, problem-solving. <br>Let’s work together to create a seamless user experience using tools such as Figma/FigJam, Adobe XD.</p>
+                <a href="#contact" class="btn-box">Contact me</a>
+              </div> 
+            </div>         
+       </div>
+       
+    </section>
+       <!-- service section  -->
+       <section id="services" class="services py-20 px-4 lg:px-0">
+        <div class="container mx-auto">
+            <h1 class="lg:text-5xl text-3xl text-center pb-16">My <span class="text-blue-500">services</span></h1>
+            <div class="services-list grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+                <div>
+                    <img src="img/stop_1935444.png" class="w-1/4 mb-4" alt="">
+                    <h2 class="md:text-4xl text-2xl font-medium mb-4">UI/UX Design</h2>
+                    <p> UI/UX design refers to the process of designing the User Interface (UI) and User Experience (UX) of digital products such as websites, mobile           applications, and software.
+                        The goal of UI/UX design is to create products that provide a seamless, enjoyable, and effective experience for users. It involves a combination of artistic skills, technical knowledge, and a user-centric approach to design.</p>
+                    <a href="#" class="read">Lern more</a>
+                </div>
+                <div>
+                    <img src="img/custom web.png" class="w-1/4 mb-4" alt="">
+                    <h2 class="md:text-4xl text-2xl font-medium mb-4">Custom Web Design</h2>
+                    <p>I provide customized and modernized website solutions that are tailored and designed for your services and products, to suit your needs and fulfil organizational objectives. i always try to do my best keeping in mind your requirements.
+
+                    </p>
+                    <a href="#" class="read">Lern more</a>
+                </div>
+                <div>
+                    <img src="img/mobile app.png" class="w-1/3 mb-4" alt="">
+                    <h2 class="md:text-4xl text-2xl font-medium mb-4">Mobile App Design</h2>
+                    <p>I ensure a perfect look and feel of mobile apps consisting of good quality user interface and user experience elements. Our designers offer top-notch ideas to create mobile app designs that have faster loading, aesthetic look, simplistic usage, and enhanced customer satisfaction.</p>
+                    <a href="#" class="read">Lern more</a>
+                </div>
+              
+            </div>
+        </div>
+    </section>
+    <!-- portfolio section  -->
+    <section id="portfolio" class="portfolio py-20 px-4 lg:px-0">
+        <div class="container mx-auto">
+            <h2 class="lg:text-5xl text-3xl text-center pb-16">Latest <span class="text-blue-500">Project</span></h2>
+            <div class=" grid lg:grid-cols-3 md:grid-cols-2 gap-10">
+                <div class="row">
+                    <img src="img/project-1.png" alt="">
+                    <div class="layer">
+                        <h5>UL/UX Designe</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid sequi nemo voluptatibus libero hic cumque, magni ex quaerat molestiae ad sit atque sed. Aperiam fugiat autem dolorem obcaecati saepe.</p>
+                        <a href="https://www.figma.com/proto/lUVm8IZExLimGE2gAgjLlo/Untitled?page-id=11%3A58&type=design&node-id=134-73&viewport=263%2C273%2C0.95&t=kWEQkvCgvUSnhYdK-1&scaling=min-zoom&mode=design"><i class="bx bx-link-external text-cyan-300"></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="img/project-2.png" alt="">
+                    <div class="layer">
+                        <h5>UL/UX Designe</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid sequi nemo voluptatibus libero hic cumque, magni ex quaerat molestiae ad sit atque sed. Aperiam fugiat autem dolorem obcaecati saepe.</p>
+                        <a href="https://www.figma.com/proto/lUVm8IZExLimGE2gAgjLlo/Untitled?page-id=0%3A1&type=design&node-id=76-8&viewport=3557%2C1393%2C0.13&t=kb19nJSEJwUbcG0K-1&scaling=scale-down&mode=design"><i class='bx bx-link-external text-cyan-300'></i></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <img src="img/project-3.png" alt="">
+                    <div class="layer">
+                        <h5>UL/UX Designe</h5>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos aliquid sequi nemo voluptatibus libero hic cumque, magni ex quaerat molestiae ad sit atque sed. Aperiam fugiat autem dolorem obcaecati saepe.</p>
+                        <a href="https://www.figma.com/proto/lUVm8IZExLimGE2gAgjLlo/Untitled?page-id=11%3A57&type=design&node-id=134-2&viewport=582%2C-84%2C0.41&t=WQTjUFb8RhIGnC0C-1&scaling=min-zoom&mode=design"><i class='bx bx-link-external text-cyan-300'></i></a>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </section>
+    <!-- experience section  -->
+    <section id="experience" class="experience py-20 px-4 lg:px-0">
+        <div class="container mx-auto">
+            <h2 class="lg:text-5xl text-3xl text-center pb-16">My <span class="text-blue-500">Experience</span></h2>
+            <p class="py-6 text-2xl">These are the technologies i've worked with</p>
+        </div>
+        <div class="container w-full grid grid-cols-1 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0 mx-auto">
+            <div class="shadow-md shadow-pink-600 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/figma.png" class="w-20 mx-auto" alt="">
+                <p class="mt-4">Figma</p>
+            </div>
+            <div class="shadow-md shadow-purple-900 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/adobe-xd-icon.webp" class="w-20 mx-auto" alt="">
+                <p class="mt-4">Adobe-Xd</p>
+            </div>
+            <div class="shadow-md shadow-blue-900 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/adobe-photoshop-icon.webp" class="w-20 mx-auto" alt="">
+                <p class="mt-4">photoshop</p>
+            </div>
+            <div class="shadow-md shadow-orange-500 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/html.png" class="w-20 mx-auto" alt="">
+                <p class="mt-4">HTML</p> 
+            </div>
+            <div class="shadow-md shadow-blue-600 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/css.png" class="w-20 mx-auto" alt="">
+                <p class="mt-4">CSS</p>
+            </div>
+            <div class="shadow-md shadow-yellow-500 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/javascript.png" class="w-20 mx-auto" alt="">
+                <p class="mt-4">javascript</p>
+            </div>
+            <div class="shadow-md shadow-orange-800 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/tailwindcss.png" class="w-20 mx-auto" alt="">
+                <p class="mt-4">tailwind css</p>
+            </div>
+            <div class="shadow-md shadow-slate-600 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/bootstrap.png" class="w-20 mx-auto" alt="">
+                <p class="mt-4">bootstrap</p>
+            </div>
+            <div class="shadow-md shadow-sky-600 hover:scale-105 duration-500 py-2 rounded-lg">
+                <img src="img/wordpress.png" class="w-20 mx-auto" alt="">
+                <p class="mt-4">Wordpress</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- contact section  -->
+    <section id="contact" class="contact py-20">
+        <div class="container mx-auto">
+            <h2  class="lg:text-5xl text-3xl text-center pb-16">Contact <span class="text-blue-500">Me</span></h2>
+            <div class="grid lg:grid-cols-2 gap-10 justify-items-center">
+
+                <div class="contact-text ml-3 gap-3">
+                    <h4>Lets work together</h4>                   
+                    <p class="leading-7 mb-4">As a UI/UX designer, I'm passionate about creating intuitive and visually engaging experiences. Whether you have a project in mind, want to discuss design strategies, or simply have questions about my work, I'm here to connect. You can also reach me directly via email at [your email address], and I'll make sure to respond promptly.</p>
+                    <div class="contact-list ">
+                       <li class="hover:ml-4 hover:text-blue-400 duration-200 cursor-pointer"><i class='bx bxs-envelope'></i>paulsomnath762@gmail.com</li>
+                       <li class="hover:ml-4 hover:text-blue-400 duration-200 cursor-pointer"><i class='bx bxs-phone'></i>+91 7003383454</li>
+                    </div>
+                    <div class="contact-icon">
+                       <a href="https://www.facebook.com/somnath.paul.12720" style="--i:12"><i class='bx bxl-facebook'></i></a>
+                       <a href="https://www.instagram.com/code_withsomnah/" style="--i:13"><i class='bx bxl-instagram' ></i></a>
+                       <a href="https://www.linkedin.com/in/somnath-paul-22b489259/" style="--i:14"><i class='bx bxl-linkedin' ></i></a>
+                       <a href="https://twitter.com/Somnath51164832" style="--i:15"><i class='bx bxl-twitter' ></i></a>
+                    </div>
+                </div>
+           
+               
+               <div class="contact-form relative ml-10">
+                  <form action="https://getform.io/f/0605301c-91cb-41fb-9993-23b980924231" method="post">
+                    <input name="name" type="text" placeholder="Enter Your Name" required>
+                    <input name="email" type="email" placeholder="Enter Your Email" required>
+                    <input name="subject" type="text" placeholder="Enter Your Subject">
+                    <textarea name="massage" name="" id="" cols="40" rows="10" placeholder="Enter Your Massage"></textarea>
+                    <input type="submit" value="submit" class="send">
+                  </form>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        
+var AutoTyping = (function (e) {
+    var t = {};
+    function r(n) {
+      if (t[n]) return t[n].exports;
+      var i = (t[n] = { i: n, l: !1, exports: {} });
+      return e[n].call(i.exports, i, i.exports, r), (i.l = !0), i.exports;
+    }
+    return (
+      (r.m = e),
+      (r.c = t),
+      (r.d = function (e, t, n) {
+        r.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: n });
+      }),
+      (r.r = function (e) {
+        "undefined" != typeof Symbol &&
+          Symbol.toStringTag &&
+          Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }),
+          Object.defineProperty(e, "__esModule", { value: !0 });
+      }),
+      (r.t = function (e, t) {
+        if ((1 & t && (e = r(e)), 8 & t)) return e;
+        if (4 & t && "object" == typeof e && e && e.__esModule) return e;
+        var n = Object.create(null);
+        if (
+          (r.r(n),
+          Object.defineProperty(n, "default", { enumerable: !0, value: e }),
+          2 & t && "string" != typeof e)
+        )
+          for (var i in e)
+            r.d(
+              n,
+              i,
+              function (t) {
+                return e[t];
+              }.bind(null, i)
+            );
+        return n;
+      }),
+      (r.n = function (e) {
+        var t =
+          e && e.__esModule
+            ? function () {
+                return e.default;
+              }
+            : function () {
+                return e;
+              };
+        return r.d(t, "a", t), t;
+      }),
+      (r.o = function (e, t) {
+        return Object.prototype.hasOwnProperty.call(e, t);
+      }),
+      (r.p = ""),
+      r((r.s = 0))
+    );
+  })([
+    function (e, t, r) {
+      "use strict";
+      r.r(t);
+      t.default = class {
+        constructor(
+          e,
+          t,
+          {
+            typeSpeed: r = 150,
+            deleteSpeed: n = 150,
+            waitBeforeDelete: i = 1e3,
+            waitBetweenWords: o = 1e3,
+            writeWhole: l = !1,
+          } = {}
+        ) {
+          (this.selector = e),
+            (this.text = t),
+            (this.typeSpeed = r),
+            (this.deleteSpeed = n),
+            (this.waitBeforeDelete = i),
+            (this.waitBetweenWords = o),
+            (this.writeWhole = l),
+            (this.el = document.querySelector(e));
+        }
+        async start() {
+          this.el;
+          for (let e = 0; e < this.text.length; e++) {
+            const t = this.text[e];
+            let r = t.split("");
+            this.writeWhole && (r = [t]),
+              await this.writeText(r),
+              e == this.text.length - 1 && (e = -1);
+          }
+        }
+        writeText(e) {
+          let t = this;
+          return new Promise((r) => {
+            const n = this.el;
+            let i = !1,
+              o = setInterval(() => {
+                let l = e.shift();
+                i && ((i = !1), (l = " " + l)),
+                  (i = " " == l),
+                  (n.innerText += l),
+                  0 == e.length &&
+                    (clearInterval(o),
+                    setTimeout(() => {
+                      let e = setInterval(() => {
+                        const i = n.innerText;
+                        t.writeWhole
+                          ? (n.innerText = "")
+                          : (n.innerText = i.substr(0, i.length - 1)),
+                          0 == n.innerText.length &&
+                            (clearInterval(e),
+                            setTimeout(() => r(), this.waitBetweenWords));
+                      }, this.deleteSpeed);
+                    }, this.waitBeforeDelete));
+              }, this.typeSpeed);
+          });
+        }
+      };
+    },
+  ]).default;
+
+ const exampleText = ["UI/UX Designer","Frontend Developer"];
+ const exampleTyping = new AutoTyping('.text', exampleText, {
+    typespeed:100,
+        backspeed:100,
+         backdalay:1000,
+         loop:true
+ });
+ exampleTyping.start()
+
+//  nav 
+
+ const navnar = document.querySelector('header');
+ window.onscroll = () => {
+    if(window.scrollY > 80){
+        navnar.classList.add("bg-black"),
+        navnar.classList.add("border-b"),
+        navnar.classList.add("border-yellow-500")
+    }else{
+        navnar.classList.remove("bg-black"),
+        navnar.classList.remove("border-b"),
+        navnar.classList.remove("border-yellow-500")
+    }
+ }
+
+//  mobile screen 
+
+const mobilemenubtn = document.getElementById("hamburger");
+const icon = document.getElementById("menu");
+const closeIcon = document.getElementById('nav-close');
+
+mobilemenubtn.addEventListener("click", () => {
+  icon.classList.toggle("hidden")
+
+})
+
+
+
+document.querySelectorAll(".nav-link").forEach(n =>
+  n.addEventListener("click", () => {
+    icon.classList.toggle("hidden")
+  })
+)
+
+    </script>
+</body>
+</html>
